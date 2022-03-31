@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d2ed087-a5c8-4fd8-a826-5c93ba68087e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<subDataset name="dataset1" uuid="2daca9a3-d7f6-41ae-8518-82180bd281a5"/>
+	<subDataset name="dataset2" uuid="5ac28be4-e7df-44da-8ae4-db4d3e814c24"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT id_drink as 'ID Bebida', name as 'Nombre', category as 'Categoría', cost as 'Costo', cant as 'Cantidad', image as 'Imagen' from register_drinks]]>
+	</queryString>
+	<field name="ID Bebida" class="java.lang.String"/>
+	<field name="Nombre" class="java.lang.String"/>
+	<field name="Categoría" class="java.lang.String"/>
+	<field name="Costo" class="java.lang.Double"/>
+	<field name="Cantidad" class="java.lang.Integer"/>
+	<field name="Imagen" class="java.io.InputStream"/>
+	<group name="ID Bebida">
+		<groupExpression><![CDATA[$F{ID Bebida}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="303" height="51" uuid="aa24e052-7d8d-494a-89b4-6cd3cd4e8203"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="Title" x="12" y="11" width="263" height="33" uuid="9d92e6f3-23a4-4eb2-abeb-aae9648825b4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Reporte de bebidas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch">
+			<line>
+				<reportElement x="-28" y="0" width="602" height="1" uuid="e9632000-0f70-4544-97f2-b38b23ca6eca"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="159" splitType="Stretch">
+			<line>
+				<reportElement x="-16" y="0" width="590" height="1" uuid="c34f729c-23b2-4b14-a35d-6ef8ad7ce099"/>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="175" y="13" width="149" height="15" uuid="33a83b05-05f9-4890-a0ad-ec392043df9c"/>
+				<text><![CDATA[Nombre de bebida]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Column header" mode="Transparent" x="324" y="13" width="149" height="15" forecolor="#006600" uuid="15aacb97-b2ca-4437-b367-fe24de26e6a7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="175" y="39" width="111" height="15" uuid="1271a257-d7b2-4553-8108-6e60eeccc8a5"/>
+				<text><![CDATA[iD Bebida]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="324" y="39" width="111" height="15" uuid="537d9793-55a3-4f14-9d15-dd80c2f1650e"/>
+				<textFieldExpression><![CDATA[$F{ID Bebida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="175" y="66" width="121" height="15" uuid="e7673c39-91c6-420b-9ca0-d8bfc9ea4e1b"/>
+				<text><![CDATA[Categoría]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="324" y="66" width="111" height="15" uuid="8cca0742-023c-4901-a3d2-66a160f7f097"/>
+				<textFieldExpression><![CDATA[$F{Categoría}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="175" y="91" width="72" height="15" uuid="05b43c9e-185a-4dbb-a89e-508cf761f84e"/>
+				<text><![CDATA[Costo]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="324" y="91" width="72" height="15" uuid="7d02f60f-aa0c-4bbe-b4b7-37471fd3d3be"/>
+				<textFieldExpression><![CDATA[$F{Costo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="175" y="117" width="86" height="15" uuid="3e67f204-a764-4a8e-8086-1965d6766fb2"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Detail" x="324" y="117" width="86" height="15" uuid="42660789-30e3-4d9b-b80f-365c25d8c28e"/>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="8" width="160" height="135" uuid="7038dc99-5ada-4059-be0f-abbdb11a5eae"/>
+				<imageExpression><![CDATA[$F{Imagen}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="-16" y="158" width="590" height="1" uuid="9ee6b1c6-4b6a-4294-a92c-7153332f30e7"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="182" splitType="Stretch">
+			<break>
+				<reportElement x="0" y="128" width="100" height="1" uuid="137a6f6b-4ca1-41bc-9122-62c266659a44"/>
+			</break>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="515" y="10" width="40" height="20" uuid="470ddaf7-8a75-48ef-82a1-147cd21620e1"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="10" width="197" height="20" uuid="509812ff-20d0-43ea-a154-59421f0be1e5"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Column header" x="422" y="10" width="80" height="20" uuid="6fdc4243-e721-408b-9705-942bc385523d"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" x="160" y="10" width="263" height="22" uuid="03452fbf-b1c4-4ae6-a7a9-4efaac62d47b"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Base de datos "Registro de bebidas"]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
